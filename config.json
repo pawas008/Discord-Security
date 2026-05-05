@@ -1,6 +1,6 @@
 
 {
-    "TOKEN": "",
+    "TOKEN": "YOUR_BOT_TOKEN_HERE",
     "PREFIX": "&",
     "MONGO_DB": "mongodb+srv://pawas:<db_password>@findexdiscordsecurity.wpg5flo.mongodb.net/?appName=FINDEXDISCORDSECURITY",
     "developer": [1279892066318684231],
