@@ -1,19 +1,22 @@
-const { ClusterManager , HeartbeatManager } = require('discord-hybrid-sharding');
-config = require('./config.json')
+const { ClusterManager, HeartbeatManager } = require("discord-hybrid-sharding");
+const config = require("./config.json");
+
 const manager = new ClusterManager(`${__dirname}/index.js`, {
-    totalShards: 2,
-    shardsPerClusters: 2,
-     totalClusters: 2,
-    mode: 'process', 
+    totalShards: "auto",
+    shardsPerCluster: 2,
+    mode: "process",
     token: config.TOKEN,
 });
 
-manager.on('clusterCreate', cluster => console.log(`Launched Cluster ${cluster.id}`));
-manager.spawn({ timeout: -1 });
+manager.on("clusterCreate", cluster =>
+    console.log(`Launched Cluster ${cluster.id}`)
+);
+
 manager.extend(
     new HeartbeatManager({
         interval: 2000,
-        maxMissedHeartbeats: 5, 
+        maxMissedHeartbeats: 5,
     })
-)
+);
 
+manager.spawn({ timeout: -1 });
