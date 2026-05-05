@@ -1,111 +1,99 @@
 # Discord Bot - All-in-One
 
-A comprehensive Discord bot with a wide range of features including moderation, utilities, gaming, and community management tools.
+A comprehensive Discord bot with moderation, security, utility, verification, ticket, and community management systems.
 
-## 📋 Features
+## Features
 
-### 🛡️ Moderation
-- Advanced moderation tools and logging
-- Auto-moderation capabilities
-- Ticket system for user support
+### Moderation
 
-### 🎮 Gaming & Fun
-- Live leaderboard system
-- Sticky messages
-- Voice channel management
-- Join-to-create voice channels
+* Ban / Kick / Mute system
+* Auto moderation
+* Channel locking
+* Warning system
+* Role management
 
-### 💎 Premium
-- Premium features and perks
-- Enhanced functionality for supporters
+### Security / Antinuke
 
-### 🔧 Utilities
-- Auto-responder system
-- Custom role management
-- Information commands
-- Verification system
-- Welcome messages
+* Anti Ban
+* Anti Kick
+* Anti Bot Add
+* Anti Webhook
+* Anti Channel Delete/Create
+* Anti Role Delete/Create
+* Panic mode
 
-### 📊 Logging
-- Comprehensive logging system
-- Event tracking and monitoring
+### Utility
 
-### 🛠️ Developer Tools
-- Development utilities
-- Testing and debugging features
+* Verification system
+* Welcome system
+* Auto responder
+* Sticky messages
+* Logging system
 
-## 📁 Project Structure
+### Voice & Community
 
-```
-src/
-├── antinuke/          # Anti-nuke protection
-├── automod/           # Auto-moderation system
-├── autoresponder/     # Custom auto-responses
-├── coustomrole/       # Custom role management
-├── dev/               # Developer commands
-├── information/       # Info & utility commands
-├── jointocreate/      # Voice channel creation
-├── liveleaderboard/   # Real-time leaderboards
-├── logs/              # Logging system
-├── moderation/        # Moderation tools
-├── premium/           # Premium features
-├── sticky/            # Sticky messages
-├── ticket/            # Support ticket system
-├── verification/      # Verification system
-├── voice/             # Voice utilities
-└── welcomer/          # Welcome messages
-```
+* Join to Create VC
+* Voice management
+* Live leaderboard
 
-## 🚀 Getting Started
+### Ticket System
 
-### Prerequisites
-- Node.js v16.9.0 or higher
-- Discord.js v14
-- A Discord Bot Token
+* Support tickets
+* Staff management
 
-### Installation
+---
 
-1. Clone the repository
-```bash
-git clone https://github.com/Manaseditz10/Bitzxier-Black
-```
+# Installation
 
-2. Install dependencies
+## Requirements
+
+* Node.js 18+ or 20+
+* MongoDB Atlas
+* Discord Bot Token
+
+---
+
+## Install Dependencies
+
 ```bash
 npm install
 ```
 
-3. Configure your bot
-- Create a `.env` file in the root directory
-- Add your bot token and other configuration
+---
 
-4. Start the bot
+## Configuration
+
+Edit `config.json`
+
+```json
+{
+  "TOKEN": "YOUR_BOT_TOKEN",
+  "MONGO_DB": "YOUR_MONGODB_URL",
+  "PREFIX": "&"
+}
+```
+
+---
+
+## Start Bot
+
 ```bash
 npm start
 ```
 
-## 📞 Support
+---
 
-Need help or have questions?
+## Hosting
 
-- **Discord:** DM `@aiosqlite.db`
-- **Support Server:** [Join here](https://discord.gg/xPgfDZSZC8)
-- **Hosting:** Available through support server
+Compatible with:
 
-## 🤝 Contributors
-- aiosqlite.db     [ @Manaseditz10 ]
-- mr_ambanigaming  [ @ambanigaming0 ]
-- 9vxk             [ @ozumaly ]
+* Render
+* Railway
+* VPS
+* PM2
 
+---
 
-## 📝 License
+## Disclaimer
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## ⚠️ Disclaimer
-
-This bot is provided as-is. Use at your own risk and ensure compliance with Discord's Terms of Service.
-
-
-
-**Made with ❤️ for the Discord community**
+Use responsibly and follow Discord Terms of Service.
