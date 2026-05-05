@@ -139,15 +139,21 @@ module.exports = class Bitzxier extends Client {
           }
 
     async initializeMongoose() {
-        this.db = new Database(this.config.MONGO_DB)
-        this.db.connect()
-        this.logger.log(`Connecting to MongoDb...`)
-        await mongoose.connect(this.config.MONGO_DB,{
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
-        this.logger.log('Mongoose Database Connected', 'ready')
+    const mongoURI = process.env.MONGO_DB || this.config.MONGO_DB;
+
+    if (!mongoURI) {
+        throw new Error("MongoDB URI missing!");
     }
+
+    this.db = new Database(mongoURI);
+    this.db.connect();
+
+    this.logger.log(`Connecting to MongoDb...`);
+
+    await mongoose.connect(mongoURI);
+
+    this.logger.log('Mongoose Database Connected', 'ready');
+}
     async loadEvents() {
         fs.readdirSync('./events/').forEach((file) => {
             if (file.endsWith('.js')) {
