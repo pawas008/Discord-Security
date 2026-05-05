@@ -160,19 +160,37 @@ module.exports = class Bitzxier extends Client {
                 let eventName = file.split('.')[0]
                 require(`${process.cwd()}/events/${file}`)(this)
                 this.logger.log(`Updated Event ${eventName}.`, 'event')
+                
             }
         })
     }
 
     async loadlogs() {
-        fs.readdirSync('./logs/').forEach((file) => {
-            if (file.endsWith('.js')) {
-                let logevent = file.split('.')[0]
-                require(`${process.cwd()}/logs/${file}`)(this)
-                this.logger.log(`Updated Logs ${logevent}.`, 'event')
-            }
-        })
+    const fs = require("fs");
+    const path = require("path");
+
+    const logPath = path.join(process.cwd(), "logs");
+
+    // 🔥 ensure folder exists
+    if (!fs.existsSync(logPath)) {
+        fs.mkdirSync(logPath, { recursive: true });
+        this.logger.log("Logs folder created automatically.", "warn");
+        return;
     }
+
+    fs.readdirSync(logPath).forEach((file) => {
+        if (file.endsWith(".js")) {
+            const logevent = file.split(".")[0];
+
+            try {
+                require(path.join(logPath, file))(this);
+                this.logger.log(`Updated Logs ${logevent}.`, "event");
+            } catch (err) {
+                this.logger.log(`Failed loading log ${logevent}: ${err.message}`, "error");
+            }
+        }
+    });
+}
 
 
     async loadMain() {
