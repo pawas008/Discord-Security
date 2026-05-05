@@ -34,7 +34,7 @@ const config = require(`${process.cwd()}/config.json`);
         console.log('Main functionality loaded.');
 
         console.log('Logging in the client...');
-        await client.login(config.TOKEN);
+        await client.login(process.env.TOKEN || config.TOKEN);
         console.log('Client logged in successfully.');
     } catch (error) {
         console.error('An error occurred during initialization:', error);
