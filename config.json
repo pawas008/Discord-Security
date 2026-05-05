@@ -2,7 +2,7 @@
 {
     "TOKEN": "YOUR_BOT_TOKEN_HERE",
     "PREFIX": "&",
-    "MONGO_DB": "mongodb+srv://pawas:<db_password>@findexdiscordsecurity.wpg5flo.mongodb.net/?appName=FINDEXDISCORDSECURITY",
+    "MONGO_DB": "mongodb+srv://pawas:1234qwerasdf@findexdiscordsecurity.wpg5flo.mongodb.net/?retryWrites=true&w=majority&appName=FINDEXDISCORDSECURITY",
     "developer": [1279892066318684231],
     "Beast" : [1279892066318684231],
     "cooldown": true,
